@@ -15,10 +15,12 @@
 # print(concat (first = 'one', second = 'two')) display
 # Executing of function concat with arguments one, two...
 # onetwo
+from itertools import chain
+
 
 def logger(func):
     def wrapper(*args, **kwargs):
-        func(*args, **kwargs)
+        var_func = func(*args, **kwargs)
         params = ', '.join([str(i) for i in args])
         params_kwags = ', '.join([str(i) for i in kwargs.values()])
         if params_kwags and params:
@@ -28,14 +30,23 @@ def logger(func):
         elif params_kwags and not params:
             final_param = params_kwags
         print("Executing of function {} with arguments {}...".format(func.__name__, final_param))
-        while func.__name__ != 'print_arg':
-            return func(*args, **kwargs)
+        return var_func
 
     return wrapper
 
 
 @logger
 def concat(*args, **kwargs):
+    # string_args = ''.join([str(i) for i in args])
+    # string_kwargs = ''.join([str(j) for j in kwargs.values()])
+    # if string_args and string_kwargs:
+    #     conc = string_args + string_kwargs
+    # elif string_args and not string_kwargs:
+    #     conc = string_args
+    # else:
+    #     conc = string_kwargs
+    # return conc
+
     string = ''
     for i in args:
         string += str(i)
