@@ -24,20 +24,21 @@ from json import JSONEncoder
 
 class CustomEncoder(JSONEncoder):
     def default(self, obj):
-        if isinstance(obj, Group):
-            return {
-                'title': obj.title,
-                'students': obj.students
-            }
-
-        elif isinstance(obj, Student):
-            return {
-                'full_name': obj.full_name,
-                'avg_rank': obj.avg_rank,
-                'courses': obj.courses
-            }
-
-        return super().default(obj)
+        # if isinstance(obj, Group):
+        #     return {
+        #         'title': obj.title,
+        #         'students': obj.students
+        #     }
+        #
+        # elif isinstance(obj, Student):
+        #     return {
+        #         'full_name': obj.full_name,
+        #         'avg_rank': obj.avg_rank,
+        #         'courses': obj.courses
+        #     }
+        #
+        # return super().default(obj)
+        return obj.__dict__
 
 
 class Student:
@@ -50,8 +51,9 @@ class Student:
     def from_json(cls, json_file):
         with open(json_file) as j_file:
             data = json.load(j_file)
-            for _ in data:
-                return Student(full_name=data["full_name"], avg_rank=data["avg_rank"], courses=data["courses"])
+            # for _ in data:
+            #     return Student(full_name=data["full_name"], avg_rank=data["avg_rank"], courses=data["courses"])
+            return cls(**data)
 
     def serialize_to_json(self, filename):
         with open(filename, 'w') as json_file:
