@@ -1,0 +1,56 @@
+[
+    {
+        "username": "Trainee1",
+        "password": "$2b$12$sYWHQzY0ch2hzDSMccAs.uIaliO/SA3sky/GKMH5o70Z/rMtyWh1W",
+        "role": 0,
+        "id": "31abd085e3474ec68fdd182ec9709b0a",
+        "score": [
+            {
+                "Software Design": "B"
+            },
+            {
+                "Mathematics": "C"
+            },
+            {
+                "New Subject": "D"
+            }
+        ]
+    },
+    {
+        "username": "Mentor",
+        "password": "!1qQ456",
+        "role": {
+            "role": "Mentor"
+        },
+        "id": 0,
+        "score": []
+    },
+    {
+        "username": "Second",
+        "password": "Password_0",
+        "role": {
+            "role": "Trainee"
+        },
+        "id": 0,
+        "score": [
+            {
+                "Software Design": "B"
+            }
+        ]
+    },
+    {
+        "title": "Mathematics",
+        "id": "31abd085e3474ec68fdd182ec9709d0a"
+    },
+    {
+        "title": "Software Design",
+        "id": "31abd085e3474ec68fdd182ed9709b0a"
+    },
+    {
+        "title": {
+            "title": "New Subject",
+            "id": 0
+        },
+        "id": 0
+    }
+]
